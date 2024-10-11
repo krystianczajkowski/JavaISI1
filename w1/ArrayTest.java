@@ -1,12 +1,26 @@
 import java.util.ArrayList;
 
 public class ArrayTest {
+    public static void main() {
+        ArrayList<Number> arr = ArrayTest.createAndFillArrayList();
+        System.out.println(ArrayTest.average(ArrayTest.toDouble(arr)));
+        System.out.println(ArrayTest.countZeroes(ArrayTest.toInteger(arr)));
+        ArrayList<Integer> a2 = ArrayTest.copyArray(ArrayTest.toInteger(arr));
+        System.out.println(a2);
+    }
+
     public static ArrayList<Number> createAndFillArrayList() {
         ArrayList<Number> arr = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             arr.add(i);
         }
         return arr;
+    }
+
+    public static ArrayList<Integer> copyArray(ArrayList<Integer> arr) {
+        ArrayList<Integer> ret = new ArrayList<>();
+        ret.addAll(arr);
+        return ret;
     }
 
     public static int countZeroes(ArrayList<Integer> arr) {
