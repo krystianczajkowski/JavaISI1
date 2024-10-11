@@ -3,6 +3,12 @@ class Dog {
     String breed;
     int age;
 
+    public static void main() {
+        Dog d = new Dog("kleks", "dog", 12);
+        d.bark();
+        System.out.println(d);
+    }
+
     public void bark() {
         System.out.println("Hau hau!");
     }
