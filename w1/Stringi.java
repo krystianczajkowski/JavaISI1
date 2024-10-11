@@ -12,6 +12,8 @@ class Stringi {
         StringBuilder sb = new StringBuilder();
         sb.append("Dystrybuanta");
         System.out.println(mostFrequentChar(sb));
+        insertSubstring(sb, "***");
+        System.out.println(sb);
     }
 
     public static String swapFirstAndLastChars(String s) {
@@ -75,5 +77,10 @@ class Stringi {
             }
         }
         return ret;
+    }
+
+    public static void insertSubstring(StringBuilder sb, String toInsert) {
+        int mid = sb.length() / 2;
+        sb.insert(mid, toInsert);
     }
 }
