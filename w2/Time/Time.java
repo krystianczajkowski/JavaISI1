@@ -11,22 +11,18 @@ public class Time {
     Time(int hours, int minutes) {
         this.hours = hours;
         this.minutes = minutes;
+
+        while (this.minutes > 59) {
+            this.minutes -= 60;
+            this.hours++;
+        }
+        if (this.hours > 23) {
+            this.hours = this.hours % 24;
+        }
     }
 
-    public void addTime(int hours, int minutes) {
-        if ((this.minutes + minutes) > 59) {
-            this.hours++;
-            if (this.hours > 23) {
-                this.hours = this.hours % 24;
-            }
-            this.minutes = (this.minutes + minutes) % 60;
-        } else {
-            this.hours = this.hours + hours;
-            if (this.hours > 23) {
-                this.hours = this.hours % 24;
-            }
-            this.minutes = this.minutes + minutes;
-        }
+    public Time addTime(Time t) {
+        return new Time(t.hours + this.hours, t.minutes + this.minutes);
     }
 
     public String toString() {
