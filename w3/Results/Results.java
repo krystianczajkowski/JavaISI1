@@ -78,7 +78,7 @@ public class Results {
         if (this == obj)
             return true;
         if (obj instanceof Results o) {
-            if (this.firstName == o.firstName && lastName == o.lastName && sameResult(results, o.results)) {
+            if (firstName == o.firstName && lastName == o.lastName && sameResult(results, o.results)) {
                 return true;
             }
         }

@@ -14,7 +14,7 @@ public class Product {
     }
 
     public static void main(String[] args) {
-        Product p = new Product();
+        Product p;
         for (int i = 0; i < 12; i++) {
             p = new Product();
             System.out.println(Product.numberOfProducts);

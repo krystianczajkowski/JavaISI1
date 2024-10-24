@@ -30,8 +30,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person: \n" + this.firstName + ' ' +
-                this.lastName + ", Age: " + this.age + '.';
+        return "Person: \n" + firstName + ' ' +
+                lastName + ", Age: " + age + '.';
     }
 
     @Override
@@ -40,8 +40,8 @@ public class Person {
             return true;
         }
         if (obj instanceof Person p) {
-            if (p.age == this.age && this.lastName.equals(p.lastName) &&
-                    this.firstName.equals(p.firstName)) {
+            if (p.age == age && lastName.equals(p.lastName) &&
+                    firstName.equals(p.firstName)) {
                 return true;
             }
         }

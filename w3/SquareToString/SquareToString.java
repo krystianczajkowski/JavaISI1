@@ -1,7 +1,5 @@
 package w3.SquareToString;
 
-import java.util.Objects;
-
 /**
  * SquareToString
  */
@@ -28,7 +26,7 @@ public class SquareToString {
             return true;
         }
         if (obj instanceof SquareToString s) {
-            return this.side == s.side;
+            return side == s.side;
         }
         return false;
     }

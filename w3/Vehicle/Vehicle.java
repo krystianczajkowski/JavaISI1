@@ -12,16 +12,19 @@ public class Vehicle {
     String model;
     int yearOfProduction;
 
-    Vehicle(String brand, String Model, int pDate) {
-        if (brand.isEmpty() || brand == null) {
+    Vehicle(String brand, String model, int pDate) {
+        if (brand == null || brand.isEmpty()) {
             this.brand = "-";
         }
-        if (model.isEmpty() || model == null) {
+        if (model == null || model.isEmpty()) {
             this.model = "-";
         }
         if (pDate > (Calendar.YEAR)) {
             this.yearOfProduction = Calendar.YEAR;
         }
+        this.model = model;
+        this.brand = brand;
+        this.yearOfProduction = pDate;
     }
 
     @Override
@@ -35,15 +38,21 @@ public class Vehicle {
         if (o == this)
             return true;
         if (o instanceof Vehicle v) {
-            return this.brand.equals(v.brand) && this.model.equals(v.model)
-                    && this.yearOfProduction == v.yearOfProduction;
+            return brand.equals(v.brand) && model.equals(v.model) && yearOfProduction == v.yearOfProduction;
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.model, this.brand, this.yearOfProduction);
+        return Objects.hash(model, brand, yearOfProduction);
     }
 
+    public static void main(String[] args) {
+        Vehicle v1 = new Vehicle("ford", "escort", 1990);
+        Vehicle v2 = new Vehicle("ford", "escort", 1991);
+        System.out.println(v1);
+        System.out.println(v2);
+        System.out.println(v1.equals(v2));
+    }
 }
